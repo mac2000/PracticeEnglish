@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNet.SignalR;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Owin;
 
@@ -7,16 +6,12 @@ using Owin;
 
 namespace PracticeEnglish
 {
-	public class Startup
-	{
-		public void Configuration(IAppBuilder app)
-		{
-			app.Map("/signalr", map =>
-			{
-				map.UseCors(CorsOptions.AllowAll);
-				var hubConfiguration = new HubConfiguration();
-				map.RunSignalR(hubConfiguration);
-			});
-		}
-	}
+    public class Startup
+    {
+        public void Configuration(IAppBuilder app)
+        {
+            app.UseCors(CorsOptions.AllowAll);
+            app.MapSignalR();
+        }
+    }
 }

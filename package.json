@@ -10,7 +10,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "cd": "npm run build && npm run deploy"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0"
